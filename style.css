@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+  --background-dark: #1f1f1f;
+  --background-light: #f0f0f5;
+  --text-dark: #ffffff;
+  --text-light: #333333;
+  --accent-color: #00e1ff;
+  --accent-hover: #0098b3;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+body {
+    background: var(--background-dark);
+    color: var(--text-dark);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.left, .right {
+    flex-grow: 1;
+    padding: 20px;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.left {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+    width: 100%;
+    height: 28%;
+    background: #2c2c2c;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #555;
+    outline: none;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-color);
+}
+
+iframe {
+    width: 100%;
+    height: 95%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+label i {
+    margin-right: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    background: var(--accent-color);
+    color: #fff;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: var(--box-shadow);
+}
+
+.resizer {
+    width: 8px;
+    cursor: col-resize;
+    background-color: #555;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resizer:hover {
+    background-color: #007bff;
+  }  
+  header {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease;
+}
+
+header .company-name {
+    font-size: 24px;
+    font-weight: 400;
+    color: #e0e0e0;
+    margin-top: 8px;
+    animation: fadeInUp 1s ease;
+}
+
+header button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Header Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 9999;
+    animation: fadeOut 1.5s ease-in-out forwards;
+    animation-delay: 2s;
+  }
+  
+  #intro-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  #intro-overlay h1, #intro-overlay p {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  #intro-overlay p {
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.1); visibility: hidden; }
+  }
+
+/* About Us Section */
+.about-us {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; 
+    padding: 60px 20px;
+    text-align: center;
+    backdrop-filter: blur(8px); 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Controls Section */
+.controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Adding Smooth Transitions */
+button, textarea, iframe, label {
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    textarea {
+        height: 20%;
+    }
+
+    iframe {
+        height: 80%;
+    }
+}
+

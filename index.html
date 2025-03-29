@@ -1,0 +1,73 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Code Editor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/85c83ab02f.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.9/beautify.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+     <!-- Intro Animation -->
+     <div id="intro-overlay">
+        <h1>Welcome to Your Live Code Editor</h1>
+        <p>Code. Compile. Create.</p>
+    </div>
+
+    <header>
+        <h1>Live Code Editor</h1>
+        <h2 class="company-name">.by Chandan</h2>
+        <button id="about-btn">About Us</button>
+    </header>
+
+    <button id="theme-toggle">Toggle Theme</button>
+    <button id="download-code">Download Code</button>
+    <button id="clear-code">Clear Code</button>
+    <button id="fullscreen-button">Fullscreen Output</button>
+
+    <div class="container">
+        <div class="left" id="left-panel">
+            <label><i class="fa-brands fa-html5"></i>HTML</label>
+            <textarea id="html-code" onkeyup="run();"></textarea>
+
+            <label><i class="fa-brands fa-css3-alt"></i>CSS</label>
+            <textarea id="css-code" onkeyup="run();"></textarea>
+
+            <label><i class="fa-brands fa-node-js"></i>Javascript</label>
+            <textarea id="js-code" onkeyup="run();"></textarea>
+        </div>
+        <div class="resizer" id="resizer"></div>
+        <div class="right" id="right-panel">
+            <label><i class="fa-solid fa-play"></i> Output</label>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+
+    <section id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <p>Welcome to Live Code Editor! Our platform is designed to empower developers by providing an interactive environment to write, edit, and execute HTML, CSS, and JavaScript code in real-time. Whether you're a student, a coding enthusiast, or a professional developer, our tool is built to enhance your productivity and learning experience.</p>
+        
+        <h2>Our Mission</h2>
+        <p>We are committed to simplifying the coding process through a seamless and intuitive interface. Our goal is to help you focus on writing clean and efficient code while seeing the results instantly. We believe learning and coding should be accessible to everyone, and our platform reflects this commitment.</p>
+        
+        <h3>Features</h3>
+        <ul>
+            <li>Real-time code execution</li>
+            <li>Support for HTML, CSS, and JavaScript</li>
+            <li>Customizable dark and light themes</li>
+            <li>Download and share your code</li>
+            <li>Responsive design for mobile and desktop</li>
+        </ul>
+        
+        <h2>Contact Us</h2>
+        <p>If you have any feedback, suggestions, or inquiries, feel free to reach out to us at <a href="mailto:support@livecodeeditor.com">support@livecodeeditor.com</a>.</p>
+        
+        <h2>Copyright Notice</h2>
+        <p>&copy; 2025 Live Code Editor. All Rights Reserved. Unauthorized duplication or distribution of this software, in whole or in part, is strictly prohibited. This platform is developed and maintained with dedication to provide a valuable experience for coders worldwide.</p>
+    </section>
+
+</body>
+</html>
